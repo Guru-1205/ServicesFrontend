@@ -3,7 +3,7 @@ import Axios from 'axios';
 import './ViewServiceMember.css';
 import SearchComponent from '../SearchComponent';
 import Home from '../Home';
-const URL = process.env.SERVER_URL;
+const URL = process.env.REACT_APP_SERVER_URL;
 function ViewServiceMember() {
   const [SMlist, setSMlist] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
