@@ -1,0 +1,33 @@
+/* SearchComponent.css */
+
+.search-container {
+    margin-top: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    width: 70%;
+    max-width: 300px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: #007bff;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+    .search-input {
+        width: 100%;
+    }
+}

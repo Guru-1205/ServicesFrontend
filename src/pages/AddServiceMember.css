@@ -1,0 +1,90 @@
+/* AddServiceMember.css */
+
+.container {
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.form {
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.input,
+.select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.radio-label {
+    margin-right: 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.radio-input {
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .label,
+    .radio-label {
+        font-size: 14px;
+    }
+
+    .input,
+    .select {
+        font-size: 14px;
+    }
+
+    .radio-label {
+        margin-right: 10px;
+    }
+
+    .button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
