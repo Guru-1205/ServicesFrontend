@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
 import './UpdateServiceMember.css'; // Import your CSS file
+const URL = process.env.REACT_APP_SERVER_URL;
 
 function UpdateServiceMember() {
   const [SMid, setSMid] = useState('');
@@ -21,7 +22,7 @@ function UpdateServiceMember() {
       documentNumber: SMdocumentNumber,
     };
 
-    Axios.put(`http://localhost:3035/update/${SMid}`, data)
+    Axios.put(`${URL}/update/${SMid}`, data)
       .then((response) => {
         console.log('Service member updated successfully:', response.data);
         // Handle response if needed

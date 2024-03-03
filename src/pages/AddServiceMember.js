@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './AddServiceMember.css';
 import Axios from 'axios';
 import Home from '../Home.js';
+const URL = process.env.REACT_APP_SERVER_URL;
 
 function AddServiceMember() {
   const [SMname, setSMname] = useState('');
@@ -21,7 +22,7 @@ function AddServiceMember() {
             SMVDT: SMVDT,
             SMdate: SMdate
         };
-        Axios.post('http://localhost:3035/add', SMdata).then(response => {
+        Axios.post(`${URL}/add`, SMdata).then(response => {
             console.log('data sent success', response.data);
         }).catch(error => {
             console.error('error', error);
@@ -82,7 +83,7 @@ function AddServiceMember() {
             className="radio-input"
             type="radio"
             value="2"
-            name="serviceShift"
+              name="serviceShift"
             checked={SMshift === '2'}
             onChange={(e) => setSMshift(e.target.value)}
           />

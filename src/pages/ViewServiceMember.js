@@ -3,7 +3,7 @@ import Axios from 'axios';
 import './ViewServiceMember.css';
 import SearchComponent from '../SearchComponent';
 import Home from '../Home';
-
+const URL = process.env.SERVER_URL;
 function ViewServiceMember() {
   const [SMlist, setSMlist] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
@@ -16,7 +16,7 @@ function ViewServiceMember() {
   const [editedDate, setEditedDate] = useState('');
 
   useEffect(() => {
-    Axios.get('http://localhost:3035/read')
+    Axios.get(`${URL}/read`)
       .then((response) => {
         setSMlist(response.data);
       })
@@ -26,7 +26,7 @@ function ViewServiceMember() {
   }, []);
 
   const deleteMember = (SMnumber) => {
-    Axios.delete(`http://localhost:3035/delete/${SMnumber}`)
+    Axios.delete(`${URL}/delete/${SMnumber}`)
       .then((response) => {
         console.log('Service member deleted successfully:', response.data);
         const updatedList = SMlist.filter((member) => member.ID !== SMnumber);
@@ -63,7 +63,7 @@ function ViewServiceMember() {
       VDN:editedVDN
     }
     console.log(editedData)
-    Axios.put(`http://localhost:3035/update/${SMnumber}`,editedData)
+    Axios.put(`${URL}/update/${SMnumber}`,editedData)
       .then((response) => {
         console.log(editedData)
         console.log('Service member updated successfully:', response.data);

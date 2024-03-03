@@ -1,11 +1,12 @@
 import Axios from 'axios';
 import { useState } from 'react';
+const URL = process.env.REACT_APP_SERVER_URL;
 
 function DeleteServiceMember() {
   const [SMnumber, setSMnumber] = useState('');
 
   const deleteSM = (SMnumber) => {
-    Axios.delete(`http://localhost:3035/delete/${SMnumber}`)
+    Axios.delete(`${URL}/delete/${SMnumber}`)
       .then((response) => {
         console.log('Service member deleted successfully:', response.data);
       })
